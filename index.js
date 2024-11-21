@@ -73,7 +73,7 @@ app.get('/promedio-valor-productos', async (req, resp) => {
     }
 });
 
-// Consulta 2: Contar el número de productos por tipo de moneda
+// Consulta 2 JU: Contar el número de productos por tipo de moneda
 app.get('/contar-productos-moneda', async (req, resp) => {
     try {
 
@@ -94,7 +94,7 @@ app.get('/contar-productos-moneda', async (req, resp) => {
     }
 });
 
-// Consulta 3: Encontrar el valor máximo y mínimo por tipo de producto
+// Consulta 3 JU: Encontrar el valor máximo y mínimo por tipo de producto
 app.get('/max-min-valor-producto-tipo', async (req, resp) => {
     try {
 
@@ -109,7 +109,7 @@ app.get('/max-min-valor-producto-tipo', async (req, resp) => {
             order: [['productType', 'ASC']]
         });
         resp.json(result);
-        
+
     } catch (error) {
         resp.status(500).json({ error: 'Error al obtener máximos y mínimos por tipo: ' + error });
     }
@@ -119,3 +119,4 @@ app.get('/max-min-valor-producto-tipo', async (req, resp) => {
 app.listen(port, ()=>{
     console.log('aplicacion ejecutando en puerto:' , port)
 })
+
